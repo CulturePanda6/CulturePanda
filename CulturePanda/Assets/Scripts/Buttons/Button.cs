@@ -11,7 +11,9 @@ public class Button : MonoBehaviour
     
     void Start()
     {
-        _buttonController = FindObjectOfType<ButtonController>(); // просто нужно,чтобы обращаться к дргуому скрипту
+        // просто нужно,чтобы обращаться к дргуому скрипту
+        _buttonController = FindObjectOfType<ButtonController>(); 
+        
     }
 
 
@@ -22,8 +24,11 @@ public class Button : MonoBehaviour
     
     public void ButtonChangeColor()
     {
-        this.GetComponent<Image>().color = new Color(0.5f, 0.5f, 0.5f); // перекрашиваем кнопку,по которой кликнули в серый цвет
-        _buttonController.ButtonIndex = NumberOfButton; // сообщаем номер кнопки по которой кликнули в другой скипт ButtonController(в инспекторе у каждой кнопки нужно выставить индекс)
+        // перекрашиваем кнопку,по которой кликнули в серый цвет
+        this.GetComponent<Image>().color = new Color(0.5f, 0.5f, 0.5f);
+        // сообщаем номер кнопки по которой кликнули в другой скипт
+        // ButtonController(в инспекторе у каждой кнопки нужно выставить индекс)
+        _buttonController.ButtonIndex = NumberOfButton; 
     }
     
    
