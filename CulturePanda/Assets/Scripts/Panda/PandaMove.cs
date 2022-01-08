@@ -8,7 +8,7 @@ public class PandaMove : MonoBehaviour
 {
     public int BambooInThisLevel;
     private ButtonController _buttonController;
-   public int i;
+    public int i;
     public GameObject YouAreLostPanel;
     public bool Endf0;
     public GameObject[] Purple;
@@ -23,17 +23,17 @@ public class PandaMove : MonoBehaviour
     private string CurrentTag;
     [SerializeField]private int _findedBamboo;
 
-
-
-
     // Start is called before the first frame update
     void Start()
     {
-        
-        
-        i = 0; // для обращения в первый раз к 0-му элементу
-        _buttonController = FindObjectOfType<ButtonController>(); // просто нужно для обращения к другому скрипту
-        YouAreLostPanel.SetActive(false); // на всякий случай выключаем панель пройгрыша
+        // для обращения в первый раз к 0-му элементу
+        i = 0;
+
+        // просто нужно для обращения к другому скрипту
+        _buttonController = FindObjectOfType<ButtonController>();
+
+        // на всякий случай выключаем панель пройгрыша
+        YouAreLostPanel.SetActive(false); 
     }
 
     // Update is called once per frame
@@ -45,21 +45,27 @@ public class PandaMove : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
-        if (Endf0 == true && i >= _buttonController.StringForAnimation.Length) // кольцуем анимации для вечного повторения заданного нами алгоритма если поставили "f0
+        // кольцуем анимации для вечного повторения заданного нами алгоритма если поставили "f0
+        if (Endf0 == true && i >= _buttonController.StringForAnimation.Length) 
         {
             i = 0;
         }
     }
-    public void OnAnimationEnded() //закончилась прошлая анимация 
+
+    //закончилась прошлая анимация
+    public void OnAnimationEnded()  
     {
         
         if (i < _buttonController.StringForAnimation.Length)
         {
             CheckingCubes();
         }
-        else if(Endf0 == false) // кольцуем анимации для вечного повторения заданного нами алгоритма
+
+        // кольцуем анимации для вечного повторения заданного нами алгоритма
+        else if (Endf0 == false) 
         {
-            YouAreLostPanel.SetActive(true);// включаем панлель пройгрыша
+            // включаем панлель пройгрыша
+            YouAreLostPanel.SetActive(true);
         }
        
     }
@@ -68,8 +74,10 @@ public class PandaMove : MonoBehaviour
     {
         if (other.CompareTag("Wrong"))
         {
-            YouAreLostPanel.SetActive(true);// включаем панлель пройгрыша
+            // включаем панлель пройгрыша
+            YouAreLostPanel.SetActive(true);
         }
+
         if (other.CompareTag("Finish"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
@@ -81,9 +89,9 @@ public class PandaMove : MonoBehaviour
             _findedBamboo++;
 
         }
-
-
     }
+
+
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("PurpleCube"))
@@ -92,16 +100,16 @@ public class PandaMove : MonoBehaviour
             {
                 Purple[e].SetActive(true);
             }
-
         }
+
         if (other.CompareTag("PinkCube"))
         {
             for (int e = 0; e < Pink.Length; e++)
             {
                 Pink[e].SetActive(true);
             }
-
         }
+
         if (other.CompareTag("YellowCube"))
         {
             for (int e = 0; e < Yellow.Length; e++)
@@ -133,6 +141,7 @@ public class PandaMove : MonoBehaviour
                 OnAnimationEnded();
             }
         }
+
         if (other.CompareTag("PinkCube"))
         {
             for (int e = 0; e < Pink.Length; e++)
@@ -152,6 +161,7 @@ public class PandaMove : MonoBehaviour
                 OnAnimationEnded();
             }
         }
+
         if (other.CompareTag("YellowCube"))
         {
             for (int e = 0; e < Yellow.Length; e++)
@@ -173,7 +183,8 @@ public class PandaMove : MonoBehaviour
         }
 
     }
-        public void OkButton()
+
+    public void OkButton()
     {
         Purple = GameObject.FindGameObjectsWithTag("Purple");
         Pink = GameObject.FindGameObjectsWithTag("Pink");
@@ -189,12 +200,14 @@ public class PandaMove : MonoBehaviour
             CurrentTag = "PurpleCube";
             ValikActive = true;
         }
+
         if (_buttonController.StringForAnimation[i] == "PinkValik")
         {
             CountMaterial = PinkMaterial;
             CurrentTag = "PinkCube";
             ValikActive = true;
         }
+
         if (_buttonController.StringForAnimation[i] == "YellowValik")
         {
             CountMaterial = YellowMaterial;
@@ -218,6 +231,7 @@ public class PandaMove : MonoBehaviour
                     i++;
                     break;
                 }
+
                 if(_buttonController._colorsInsideFunctionButtons[e].activeInHierarchy == false)
                 {
                     this.GetComponent<Animator>().SetTrigger(_buttonController.StringForAnimation[i]);
@@ -226,6 +240,7 @@ public class PandaMove : MonoBehaviour
                 }
 
             }
+
             else if (e == _buttonController._colorsInsideFunctionButtons.Length - 1)
             {
                 i = 0;
@@ -240,6 +255,7 @@ public class PandaMove : MonoBehaviour
                             i++;
                             break;
                         }
+
                         if (_buttonController._colorsInsideFunctionButtons[f].activeInHierarchy == false)
                         {
                             this.GetComponent<Animator>().SetTrigger(_buttonController.StringForAnimation[i]);
@@ -249,7 +265,6 @@ public class PandaMove : MonoBehaviour
                     }
                 }
             }
-
         }
     }
 }

@@ -15,9 +15,5 @@ public class AnimationController : MonoBehaviour
     void Update()
     {
         
-    }
-
-
-   
-  
+    }  
 }

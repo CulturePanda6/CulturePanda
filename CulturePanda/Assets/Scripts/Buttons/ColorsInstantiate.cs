@@ -9,13 +9,10 @@ public class ColorsInstantiate : MonoBehaviour
     public Color CurrentColor;
     public string CurrentTag;
     
-    
-    
-  
     void Start()
     {
-        
-        _buttonController = FindObjectOfType<ButtonController>();//просто нужно для обращения к другому скрипту
+        //просто нужно для обращения к другому скрипту
+        _buttonController = FindObjectOfType<ButtonController>();
     }
 
     // Update is called once per frame
@@ -26,10 +23,13 @@ public class ColorsInstantiate : MonoBehaviour
 
     public void ColorInstantiateing()
     {
-        _buttonController._ConstatintcolorsInsideFunctionButtons[_buttonController.ButtonIndex].SetActive(true); // включаем Image внури Функциональной кнопки,для красоты
+        // включаем Image внури Функциональной кнопки,для красоты
+        _buttonController._ConstatintcolorsInsideFunctionButtons[_buttonController.ButtonIndex].SetActive(true); 
         _buttonController._colorsInsideFunctionButtons[_buttonController.ButtonIndex].SetActive(true);
         CurrentColor.a = 1;
-        _buttonController._colorsInsideFunctionButtons[_buttonController.ButtonIndex].GetComponent<Image>().color = CurrentColor; // присваем цвет окну функции,как на кнопке,которую мы нажали
+
+        // присваем цвет окну функции,как на кнопке,которую мы нажали
+        _buttonController._colorsInsideFunctionButtons[_buttonController.ButtonIndex].GetComponent<Image>().color = CurrentColor; 
         _buttonController._ConstatintcolorsInsideFunctionButtons[_buttonController.ButtonIndex].GetComponent<Image>().color = CurrentColor;
         _buttonController._colorsInsideFunctionButtons[_buttonController.ButtonIndex].tag = CurrentTag;
     }

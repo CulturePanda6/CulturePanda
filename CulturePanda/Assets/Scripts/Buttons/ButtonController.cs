@@ -11,6 +11,7 @@ public class ButtonController : MonoBehaviour
     public GameObject[] _colorsInsideFunctionButtons;
     public GameObject[] _ConstatintcolorsInsideFunctionButtons;
     public string[] StringForAnimation;
+
     void Start()
     {
         
@@ -24,7 +25,9 @@ public class ButtonController : MonoBehaviour
     
     public void ClicInFuctionButton()
     {
-        for(int i = 0; i < _functionsButtons.Length; i++) // все кнопки перекрашиваются в стандартный цвет,для того,чтобы одна только кнопка была серым цветом
+        // все кнопки перекрашиваются в стандартный цвет,для того,
+        // чтобы одна только кнопка была серым цветом
+        for (int i = 0; i < _functionsButtons.Length; i++) 
         {
             _functionsButtons[i].GetComponent<Image>().color = new Color(1,1,1);
         }
