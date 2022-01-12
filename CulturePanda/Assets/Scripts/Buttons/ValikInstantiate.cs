@@ -12,7 +12,7 @@ public class ValikInstantiate : MonoBehaviour
     public string Name;
     void Start()
     {
-        //просто нужно для обращения к другому скрипту
+        //need to cause another script
         _buttonController = FindObjectOfType<ButtonController>();
     }
 
@@ -24,15 +24,15 @@ public class ValikInstantiate : MonoBehaviour
 
     public void ValikColorInstantiateing()
     {
-        // включаем Image внури Функциональной кнопки,для красоты
+        // turn on Image inside functional button, optional
         _buttonController._imageInsideFunctionButtons[_buttonController.ButtonIndex].SetActive(true); 
         CurrentColor.a = 1;
         _buttonController._imageInsideFunctionButtons[_buttonController.ButtonIndex].GetComponent<Image>().color = CurrentColor;
 
-        // присваем картинку окну функции,как на кнопке,которую мы нажали
+        // assign a picture to the window of function like on the pressed button
         _buttonController._imageInsideFunctionButtons[_buttonController.ButtonIndex].GetComponent<Image>().sprite = DirectionPrefab;  
 
-        // присваем имя кнопки,которую мы только что нажали выбранному окну функции
+        // assign the name of the pressed button to choosen function window
         _buttonController.StringForAnimation[_buttonController.ButtonIndex] = Name; 
     }
 }

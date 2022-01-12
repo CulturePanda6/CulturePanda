@@ -26,13 +26,13 @@ public class PandaMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // для обращения в первый раз к 0-му элементу
+        // for the cause to the 0 elements for the first time
         i = 0;
 
-        // просто нужно для обращения к другому скрипту
+        //just to call another script
         _buttonController = FindObjectOfType<ButtonController>();
 
-        // на всякий случай выключаем панель пройгрыша
+        // just in case turn off the lost panel
         YouAreLostPanel.SetActive(false); 
     }
 
@@ -45,26 +45,25 @@ public class PandaMove : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
-        // кольцуем анимации для вечного повторения заданного нами алгоритма если поставили "f0
+        // repeat animations for infinite repeating the answer if "f0" is set
         if (Endf0 == true && i >= _buttonController.StringForAnimation.Length) 
         {
             i = 0;
         }
     }
 
-    //закончилась прошлая анимация
+  
     public void OnAnimationEnded()  
     {
-        
         if (i < _buttonController.StringForAnimation.Length)
         {
             CheckingCubes();
         }
 
-        // кольцуем анимации для вечного повторения заданного нами алгоритма
+        // repeat animations for infinite repeating the answer
         else if (Endf0 == false) 
         {
-            // включаем панлель пройгрыша
+            // turn on the lost panel
             YouAreLostPanel.SetActive(true);
         }
        
@@ -74,7 +73,7 @@ public class PandaMove : MonoBehaviour
     {
         if (other.CompareTag("Wrong"))
         {
-            // включаем панлель пройгрыша
+            // turn on the lost panel
             YouAreLostPanel.SetActive(true);
         }
 
@@ -225,7 +224,8 @@ public class PandaMove : MonoBehaviour
             if (_buttonController._colorsInsideFunctionButtons[e].activeInHierarchy == false)
             {
                 i = e;
-                if (_buttonController.StringForAnimation[i] == "PurpleValik" || _buttonController.StringForAnimation[i] == "PinkValik" || _buttonController.StringForAnimation[i] == "YellowValik")
+                if (_buttonController.StringForAnimation[i] == "PurpleValik" || _buttonController.StringForAnimation[i] == 
+                    "PinkValik" || _buttonController.StringForAnimation[i] == "YellowValik")
                 {
                     Valik();
                     i++;
@@ -249,7 +249,8 @@ public class PandaMove : MonoBehaviour
                     if (_buttonController._colorsInsideFunctionButtons[f].activeInHierarchy == false)
                     {
                         i = f;
-                        if (_buttonController.StringForAnimation[i] == "PurpleValik" || _buttonController.StringForAnimation[i] == "PinkValik" || _buttonController.StringForAnimation[i] == "YellowValik")
+                        if (_buttonController.StringForAnimation[i] == "PurpleValik" || _buttonController.StringForAnimation[i] == "PinkValik" 
+                            || _buttonController.StringForAnimation[i] == "YellowValik")
                         {
                             Valik();
                             i++;

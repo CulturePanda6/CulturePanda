@@ -705,7 +705,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1873622331}
         m_MethodName: RestartButton
         m_Mode: 1
         m_Arguments:
@@ -1393,7 +1393,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &308553747
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3710,7 +3710,7 @@ GameObject:
   - component: {fileID: 1056135742}
   m_Layer: 0
   m_Name: Cube3
-  m_TagString: Untagged
+  m_TagString: PinkCube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3824,7 +3824,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1068930074
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3965,7 +3965,7 @@ GameObject:
   - component: {fileID: 1070734306}
   m_Layer: 0
   m_Name: Cube3 (1)
-  m_TagString: Untagged
+  m_TagString: PinkCube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4751,7 +4751,7 @@ GameObject:
   - component: {fileID: 1265288182}
   m_Layer: 0
   m_Name: Panda
-  m_TagString: Untagged
+  m_TagString: PinkCube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6360,7 +6360,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1629212024}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.52, y: 0.49, z: 0}
+  m_LocalPosition: {x: 0.51, y: 0.49, z: 0}
   m_LocalScale: {x: 0.120000005, y: 1.2, z: 0.120000005}
   m_Children: []
   m_Father: {fileID: 241204782}
@@ -7047,7 +7047,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.018798828, y: -0.0029907227}
+  m_AnchoredPosition: {x: -0.018554688, y: -0.0029296875}
   m_SizeDelta: {x: -0.037597656, y: -0.0059814453}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1873622331
@@ -7224,7 +7224,7 @@ GameObject:
   - component: {fileID: 2062593870}
   m_Layer: 0
   m_Name: Cube2
-  m_TagString: Untagged
+  m_TagString: PinkCube
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
