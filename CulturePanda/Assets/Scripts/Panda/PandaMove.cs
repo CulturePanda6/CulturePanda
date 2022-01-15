@@ -42,7 +42,8 @@ public class PandaMove : MonoBehaviour
         
         if(BambooInThisLevel == _findedBamboo)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene("Map");
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
         // repeat animations for infinite repeating the answer if "f0" is set
@@ -79,7 +80,8 @@ public class PandaMove : MonoBehaviour
 
         if (other.CompareTag("Finish"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+            SceneManager.LoadScene("Map");
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
         }
 
         if(other.CompareTag("Bamboo"))
