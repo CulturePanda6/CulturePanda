@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PandaMove : MonoBehaviour
 {
     public int BambooInThisLevel;
-    private ButtonController _buttonController;
+    public ButtonController _buttonController;
    public int i;
     public GameObject YouAreLostPanel;
     public bool Endf0;
@@ -31,15 +31,15 @@ public class PandaMove : MonoBehaviour
     {
         
         
-        i = 0; // для обращения в первый раз к 0-му элементу
-        _buttonController = FindObjectOfType<ButtonController>(); // просто нужно для обращения к другому скрипту
-        YouAreLostPanel.SetActive(false); // на всякий случай выключаем панель пройгрыша
+        i = 0; // To access the 0th element for the first time 
+        _buttonController = FindObjectOfType<ButtonController>(); // You just need to refer to another script 
+        YouAreLostPanel.SetActive(false); // Turn off the play panel just in case 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(i);
         if(BambooInThisLevel == _findedBamboo)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -50,7 +50,7 @@ public class PandaMove : MonoBehaviour
             i = 0;
         }
     }
-    public void OnAnimationEnded() //закончилась прошлая анимация 
+    public void OnAnimationEnded() //When the last animation ended 
     {
         
         if (i < _buttonController.StringForAnimation.Length)
@@ -59,7 +59,7 @@ public class PandaMove : MonoBehaviour
         }
         else if(Endf0 == false) // кольцуем анимации для вечного повторения заданного нами алгоритма
         {
-            YouAreLostPanel.SetActive(true);// включаем панлель пройгрыша
+            YouAreLostPanel.SetActive(true);// Turn on the loss panel
         }
        
     }
@@ -68,7 +68,7 @@ public class PandaMove : MonoBehaviour
     {
         if (other.CompareTag("Wrong"))
         {
-            YouAreLostPanel.SetActive(true);// включаем панлель пройгрыша
+            YouAreLostPanel.SetActive(true);// Turn on the loss panel
         }
         if (other.CompareTag("Finish"))
         {
