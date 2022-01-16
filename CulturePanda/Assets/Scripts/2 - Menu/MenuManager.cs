@@ -13,6 +13,8 @@ public class MenuManager : MonoBehaviour{
         MBC = transform.Find("Options/Music Buttons/Music Button Checked");
         if(music.GetComponent<AudioManager>().isPlaying()) MBC.gameObject.SetActive(true);
         else MB.gameObject.SetActive(true);
+
+        Screen.SetResolution(1920, 1080, Screen.fullScreen);
     }
 
     public void PlayMenu(){
@@ -98,7 +100,7 @@ public class MenuManager : MonoBehaviour{
             FHDButton.gameObject.SetActive(false);
             DKButton.gameObject.SetActive(false);
         }else if(drop == 2){ //1920x1080
-        Screen.SetResolution(1920, 1080, Screen.fullScreen);
+            Screen.SetResolution(1920, 1080, Screen.fullScreen);
             HDButton.gameObject.SetActive(false);
             FHDButton.gameObject.SetActive(true);
             DKButton.gameObject.SetActive(false);
